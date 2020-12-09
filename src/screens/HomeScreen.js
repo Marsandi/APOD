@@ -107,7 +107,7 @@ const HomeScreen = () => {
                     d='M10 19l-7-7m0 0l7-7m-7 7h18'
                   ></path>
                 </svg>
-                <span>Previous Day</span>
+                <span className='text-base'>Previous Day</span>
               </a>
             </div>
             <div className='flex justify-end lg:pr-10'>
@@ -115,7 +115,7 @@ const HomeScreen = () => {
                 href={searchQuery}
                 className='rounded py-2 px-8 m-4 text-md text-primary bg-blue-800 hover:bg-white border-2 hover:border-blue-800 text-white hover:text-blue-800 transition ease-out duration-500'
               >
-                <span>Next Day</span>
+                <span className='text-base'>Next Day</span>
                 <svg
                   className='inline-block w-6 h-6 ml-3'
                   fill='none'
