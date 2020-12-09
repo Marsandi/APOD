@@ -10,6 +10,7 @@
     "autoprefixer": "^9.8.6",
     "axios": "^0.21.0",
     "lottie-web": "^5.7.5",
+    "moment": "^2.29.1",
     "postcss": "^7.0.35",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
