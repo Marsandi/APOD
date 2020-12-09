@@ -49,7 +49,7 @@ const HomeScreen = () => {
               <p className='text-md pb-2'>{date}</p>
               <p className='text-3xl py-5'>{title}</p>
               <p className='text-base'>{desc}</p>
-              <div className='flex justify-center mt-3'>
+              <div className='flex justify-center mt-5'>
                 <a
                   href={searchQuery}
                   className='rounded py-2 px-8 m-4 text-md text-primary border-blue-800 border-2 hover:bg-blue-800 hover:text-white transition ease-out duration-500'
@@ -94,7 +94,7 @@ const HomeScreen = () => {
                 className='rounded py-2 px-8 m-4 text-md text-primary bg-blue-800 hover:bg-white border-2 hover:border-blue-800 text-white hover:text-blue-800 transition ease-out duration-500'
               >
                 <svg
-                  class='inline-block w-6 h-6 mr-3'
+                  className='inline-block w-6 h-6 mr-3'
                   fill='none'
                   stroke='currentColor'
                   viewBox='0 0 24 24'
@@ -117,7 +117,7 @@ const HomeScreen = () => {
               >
                 <span>Next Day</span>
                 <svg
-                  class='inline-block w-6 h-6 ml-3'
+                  className='inline-block w-6 h-6 ml-3'
                   fill='none'
                   stroke='currentColor'
                   viewBox='0 0 24 24'
