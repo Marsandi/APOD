@@ -43,7 +43,7 @@ const HomeScreen = () => {
     }
 
     fetchData()
-  }, [date, isValidForNext])
+  }, [date, isValidForNext, dateVal])
 
   const nextHandler = (type) => {
     if (type === 'prev') {
