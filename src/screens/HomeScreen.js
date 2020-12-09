@@ -59,32 +59,34 @@ const HomeScreen = () => {
       {loading && <Loader />}
       {!loading && (
         <>
-          <div className='grid lg:grid-cols-2 lg:px-30 xl:px-60 font-body'>
-            <div className='p-10 sm:mx-auto'>
+          <div className='grid lg:grid-cols-2 md:px-10 lg:px-30 xl:px-30 2xl:px-55 font-body'>
+            <div className='p-10 sm:mx-auto max-w-sm md:max-w-lg w-10/12'>
               <p className='text-md pb-2'>{date}</p>
               <p className='text-3xl py-5'>{title}</p>
               <p className='text-base'>{desc}</p>
               <div className='flex justify-center mt-5'>
                 <a
                   href={searchQuery}
-                  className='rounded py-2 px-8 m-4 text-md text-primary border-blue-800 border-2 hover:bg-blue-800 hover:text-white transition ease-out duration-500'
+                  className='rounded py-2 px-8 m-4 text-primary border-blue-800 border-2 hover:bg-blue-800 hover:text-white transition ease-out duration-500'
                 >
-                  Learn More
+                  <span className='text-xs md:text-base'>Learn More</span>
                 </a>
                 <a
                   href={mediaUrl}
-                  className='rounded py-2 px-8 m-4 text-md text-primary bg-blue-800 hover:bg-white border-2 hover:border-blue-800 text-white hover:text-blue-800 transition ease-out duration-500'
+                  className='rounded py-2 px-8 m-4 text-primary bg-blue-800 hover:bg-white border-2 hover:border-blue-800 text-white hover:text-blue-800 transition ease-out duration-500'
                 >
-                  View {mediaType === 'image' && <span>Image</span>}
-                  {mediaType === 'video' && <span>Video</span>}
+                  <span className='text-xs md:text-base'>
+                    View {mediaType === 'image' && <span>Image</span>}
+                    {mediaType === 'video' && <span>Video</span>}
+                  </span>
                 </a>
               </div>
             </div>
-            <div className='p-10 md:pt-20 sm:mx-auto'>
+            <div className='w-10/12'>
               {mediaType === 'image' && (
                 <div>
                   <img
-                    className='object-contain md:object-scale-down w-auto h-auto mx-auto max-w-md'
+                    className='object-contain md:object-scale-down w-11/12 md:max-w-lg overflow-hidden md:overflow-visible py-10 md:pt-20 mx-auto'
                     src={mediaUrl}
                     alt='APOD'
                   />
@@ -93,6 +95,7 @@ const HomeScreen = () => {
               {mediaType === 'video' && (
                 <div>
                   <iframe
+                    className='w-11/12 md:max-w-lg overflow-hidden md:overflow-visible py-10 md:pt-20 mx-auto'
                     title='video_of_the_day'
                     width='500'
                     height='400'
