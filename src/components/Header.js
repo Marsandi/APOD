@@ -8,7 +8,7 @@ const Header = () => {
           <div className='flex justify-start lg:pl-5 items-center'>
             <a
               className='text-lg inline-block'
-              href='https://apod.nasa.gov/apod/astropix.html'
+              href='https://nasa-apod-webapp.netlify.app/'
             >
               <img
                 className='inline-block h-20 w-auto p-2'
