@@ -17,6 +17,7 @@ const HomeScreen = () => {
     'https://www.google.com/search?q=NASA'
   )
 
+  //running
   useEffect(() => {
     const fetchData = async () => {
       const mediaObj = await axios.get(
