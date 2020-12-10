@@ -49,8 +49,10 @@ const HomeScreen = () => {
     if (type === 'prev') {
       setDate(moment(date).subtract(1, 'days').format('YYYY-MM-DD'))
       setIsValidForNext(true)
+      window.scrollTo(0, 0)
     } else {
       setDate(moment(date).add(1, 'days').format('YYYY-MM-DD'))
+      window.scrollTo(0, 0)
     }
   }
 
@@ -60,29 +62,37 @@ const HomeScreen = () => {
       {!loading && (
         <>
           <div className='grid lg:grid-cols-2 md:px-10 lg:px-30 xl:px-30 2xl:px-55 font-body'>
-            <div className='p-10 sm:mx-auto max-w-sm md:max-w-lg w-10/12'>
+            <div className='p-2 md:p-10 sm:mx-auto max-w-sm md:max-w-lg md:w-10/12'>
               <p className='text-md pb-2'>{date}</p>
               <p className='text-3xl py-5'>{title}</p>
               <p className='text-base'>{desc}</p>
-              <div className='flex justify-center mt-5'>
-                <a
-                  href={searchQuery}
-                  className='rounded py-2 px-8 m-4 text-primary border-blue-800 border-2 hover:bg-blue-800 hover:text-white transition ease-out duration-500'
-                >
-                  <span className='text-xs md:text-base'>Learn More</span>
-                </a>
-                <a
-                  href={mediaUrl}
-                  className='rounded py-2 px-8 m-4 text-primary bg-blue-800 hover:bg-white border-2 hover:border-blue-800 text-white hover:text-blue-800 transition ease-out duration-500'
-                >
-                  <span className='text-xs md:text-base'>
-                    View {mediaType === 'image' && <span>Image</span>}
-                    {mediaType === 'video' && <span>Video</span>}
-                  </span>
-                </a>
+              <div className='grid grid-cols-2 md:flex md:justify-center mt-5 md:mt-10 lg:gap-2 xl:gap-10'>
+                <div>
+                  <a
+                    href={searchQuery}
+                    target='_blank'
+                    rel='noreferrer'
+                    className='rounded py-2 px-6 ml-4 text-primary border-blue-800 border-2 hover:bg-blue-800 hover:text-white transition ease-out duration-500'
+                  >
+                    <span className='text-xs md:text-base'>Learn More</span>
+                  </a>
+                </div>
+                <div>
+                  <a
+                    href={mediaUrl}
+                    target='_blank'
+                    rel='noreferrer'
+                    className='rounded py-2 px-6 mr-4 text-primary bg-blue-800 hover:bg-white border-2 hover:border-blue-800 text-white hover:text-blue-800 transition ease-out duration-500'
+                  >
+                    <span className='text-xs md:text-base'>
+                      View {mediaType === 'image' && <span>Image</span>}
+                      {mediaType === 'video' && <span>Video</span>}
+                    </span>
+                  </a>
+                </div>
               </div>
             </div>
-            <div className='w-10/12'>
+            <div>
               {mediaType === 'image' && (
                 <div>
                   <img
@@ -105,13 +115,13 @@ const HomeScreen = () => {
               )}
             </div>
           </div>
-          <div className='grid grid-cols-2 lg:px-30 xl:px-60 font-body'>
+          <div className='flex justify-between md:grid md:grid-cols-2 lg:px-30 xl:px-60 font-body mb-10'>
             <div className='flex justify-start lg:pl-5'>
               <button
                 onClick={() => {
                   nextHandler('prev')
                 }}
-                className='rounded py-2 px-8 m-4 text-md text-primary bg-blue-800 hover:bg-white border-2 hover:border-blue-800 text-white hover:text-blue-800 transition ease-out duration-500'
+                className='rounded py-2 px-4 md:px-8 m-2 md:m-4 text-md text-primary bg-blue-800 hover:bg-white border-2 hover:border-blue-800 text-white hover:text-blue-800 transition ease-out duration-500'
               >
                 <svg
                   className='inline-block w-6 h-6 mr-3'
@@ -127,7 +137,7 @@ const HomeScreen = () => {
                     d='M10 19l-7-7m0 0l7-7m-7 7h18'
                   ></path>
                 </svg>
-                <span className='text-base'>Previous Day</span>
+                <span className='text-xs md:text-base'>Previous Day</span>
               </button>
             </div>
             <div className='flex justify-end lg:pr-10'>
@@ -136,9 +146,9 @@ const HomeScreen = () => {
                   onClick={() => {
                     nextHandler('next')
                   }}
-                  className='rounded py-2 px-8 m-4 text-md text-primary bg-blue-800 hover:bg-white border-2 hover:border-blue-800 text-white hover:text-blue-800 transition ease-out duration-500'
+                  className='rounded py-2 px-4 md:px-8 m-2 md:m-4 text-md text-primary bg-blue-800 hover:bg-white border-2 hover:border-blue-800 text-white hover:text-blue-800 transition ease-out duration-500'
                 >
-                  <span className='text-base'>Next Day</span>
+                  <span className='text-xs md:text-base'>Next Day</span>
                   <svg
                     className='inline-block w-6 h-6 ml-3'
                     fill='none'
